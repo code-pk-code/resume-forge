@@ -54,14 +54,18 @@
 ### Install and run
 
 ```bash
-# 1. Install dependencies
+# 1. Unzip and enter the project
+unzip resume-forge.zip
+cd resume-forge
+
+# 2. Install dependencies
 npm install
 
-# 2. (Optional) Copy env template and customise
+# 3. (Optional) Copy env template and customise
 cp .env.example .env.local
 # Edit .env.local with your preferred values
 
-# 3. Start dev server
+# 4. Start dev server
 npm run dev
 # → Opens at http://localhost:3000
 ```
