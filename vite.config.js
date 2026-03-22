@@ -6,6 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
   return {
+    base: '/resume-forge/',
     plugins: [react()],
 
     // ── Dev server ───────────────────────────────────────────
