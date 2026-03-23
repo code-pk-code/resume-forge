@@ -1,48 +1,32 @@
-import { defineConfig, loadEnv } from "vite";
-import react from "@vitejs/plugin-react";
+// vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), "");
+export default defineConfig({
+  plugins: [react()],
 
-  return {
-    base: '/resume-forge/',
-    plugins: [react()],
+  // GitHub Pages serves the site at /resume-forge/
+  // This base must match your repository name exactly.
+  base: '/resume-forge/',
 
-    // ── Dev server ───────────────────────────────────────────
-    server: {
-      port: parseInt(env.PORT || "3000"),
-      open: true,
-      cors: true,
-      headers: {
-        "X-Frame-Options": "DENY",
-        "X-Content-Type-Options": "nosniff",
-      },
-    },
+  server: {
+    port: 3000,
+    open: true,
+  },
 
-    // ── Production build ────────────────────────────────────
-    build: {
-      outDir: "dist",
-      sourcemap: false,       // never expose source in prod
-      minify: "esbuild",
-      target: "es2020",
-      chunkSizeWarningLimit: 400,
-      rollupOptions: {
-        output: {
-          manualChunks: { vendor: ["react", "react-dom"] },
+  preview: {
+    port: 4173,
+  },
+
+  build: {
+    outDir: 'dist',
+    // Generate a smaller bundle by splitting vendor code
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
         },
       },
     },
-
-    // ── Environment variable prefix ─────────────────────────
-    // All VITE_* vars are inlined at build time.
-    // See config/app.config.js for runtime-readable values.
-    envPrefix: "VITE_",
-
-    // ── Preview (post-build local testing) ──────────────────
-    preview: {
-      port: parseInt(env.PREVIEW_PORT || "4173"),
-      open: true,
-    },
-  };
-});
+  },
+})

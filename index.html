@@ -1,19 +1,39 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="ResumeForge — Free professional resume builder with 9 templates and A4 PDF download." />
-    <meta name="robots" content="index, follow" />
-    <!-- Open Graph -->
-    <meta property="og:title"       content="ResumeForge — Free Resume Builder" />
-    <meta property="og:description" content="9 professional templates. Fill in your details. Download an A4 PDF. Free, no sign-up." />
-    <meta property="og:type"        content="website" />
-    <title>ResumeForge — Free Resume Builder</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <!-- ↓ critical: prevents iOS auto-zoom on input focus -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="description" content="ResumeForge — Free professional resume builder with 9 templates and A4 PDF download." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#2D6BE4" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#111113"  media="(prefers-color-scheme: dark)"  />
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="ResumeForge — Free Resume Builder" />
+  <meta property="og:description" content="9 professional templates. Fill in your details. Download an A4 PDF. Free, no sign-up." />
+  <meta property="og:type"        content="website" />
+
+  <title>ResumeForge — Free Resume Builder</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Preconnect for Google Fonts (used by redesigned UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Prevent flash of unstyled theme: read saved preference before React loads -->
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('rf_theme_v1');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch(e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 </html>

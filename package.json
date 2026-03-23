@@ -4,11 +4,14 @@
   "version": "2.0.0",
   "description": "Professional resume builder — 9 templates, A4 PDF, configurable",
   "type": "module",
+  "homepage": "https://code-pk-code.github.io/resume-forge",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint src --ext .js,.jsx"
+    "lint": "eslint src --ext .js,.jsx",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -19,7 +22,8 @@
     "vite": "^5.4.2",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.35.0",
-    "eslint-plugin-react-hooks": "^4.6.2"
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "gh-pages": "^6.1.1"
   },
   "engines": {
     "node": ">=18.0.0"
