@@ -1,0 +1,38 @@
+/* TplTech.css — Monospace developer résumé, terminal-style header */
+.tpl-tech { display: flex; flex-direction: column; }
+.tpl-tech__header { flex-shrink: 0; background: #f8fafc; border-bottom: 1px solid #e5e7eb; }
+.tpl-tech__prompt-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+.tpl-tech__dollar { font-weight: 700; }
+.tpl-tech__name { font-weight: 700; color: #0f172a; letter-spacing: -0.5px; }
+.tpl-tech__title { color: #64748b; margin-bottom: 7px; }
+.tpl-tech__contacts { display: flex; flex-wrap: wrap; }
+.tpl-tech__contact-sep { color: #cbd5e1; margin: 0 8px; }
+
+.tpl-tech__body { flex: 1; }
+
+.tpl-tech__heading { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; margin-top: 2px; }
+.tpl-tech__heading-comment { font-weight: 400; color: #94a3b8; }
+.tpl-tech__heading-label { font-weight: 700; letter-spacing: 0.08em; }
+.tpl-tech__heading-rule { flex: 1; height: 1px; opacity: 0.15; }
+
+.tpl-tech__section { margin-bottom: 14px; }
+
+.tpl-tech__entry { margin-bottom: 11px; padding-left: 12px; }
+.tpl-tech__exp-row { display: flex; justify-content: space-between; align-items: baseline; }
+.tpl-tech__exp-role { font-size: 11px; font-weight: 700; color: #0f172a; }
+.tpl-tech__exp-at { margin-left: 8px; }
+.tpl-tech__exp-date { font-weight: 600; white-space: nowrap; margin-left: 8px; flex-shrink: 0; }
+
+.tpl-tech__skill-cat-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 5px; }
+.tpl-tech__skill-cat-name { opacity: 0.6; min-width: 58px; padding-top: 2px; flex-shrink: 0; }
+.tpl-tech__skill-pills { display: flex; flex-wrap: wrap; gap: 3px 4px; }
+.tpl-tech__skill-pill { padding: 1px 6px; border-radius: 3px; font-weight: 500; }
+
+.tpl-tech__proj-entry { margin-bottom: 8px; padding-left: 12px; }
+.tpl-tech__proj-row { display: flex; justify-content: space-between; align-items: baseline; }
+.tpl-tech__proj-name { font-weight: 700; color: #0f172a; }
+.tpl-tech__proj-url { margin-top: 1px; }
+.tpl-tech__proj-desc { color: #4b5563; margin-top: 3px; line-height: 1.5; }
+
+.tpl-tech__bullet-line { display: flex; gap: 6px; margin-bottom: 2px; padding-left: 12px; }
+.tpl-tech__lang-row { display: flex; flex-wrap: wrap; gap: 3px 8px; padding-left: 12px; }

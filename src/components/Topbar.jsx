@@ -65,7 +65,12 @@ export default function Topbar({
         </button>
 
         {/* Download */}
-        <button className="btn btn-primary btn-sm" onClick={onDownload} aria-label="Download PDF">
+        <button
+          className="btn btn-primary btn-sm"
+          onClick={onDownload}
+          aria-label="Download PDF (Ctrl+P)"
+          title="Download PDF (Ctrl+P)"
+        >
           <IcoDownload size={13} />
           <span>Download PDF</span>
         </button>

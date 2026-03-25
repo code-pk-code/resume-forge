@@ -1,0 +1,31 @@
+/* TplDiplomat.css — Formal two-column: main left (60%) + sidebar right (40%) */
+.tpl-diplomat { display: flex; flex-direction: row; }
+.tpl-diplomat__main { flex: 0 0 60%; display: flex; flex-direction: column; }
+.tpl-diplomat__name-block { padding-bottom: 14px; margin-bottom: 16px; }
+.tpl-diplomat__name { font-size: 24px; font-weight: 800; color: #111; letter-spacing: -0.3px; line-height: 1.1; }
+.tpl-diplomat__title { font-size: 11px; font-weight: 600; margin-top: 5px; letter-spacing: 0.04em; }
+.tpl-diplomat__heading { margin-bottom: 9px; margin-top: 2px; }
+.tpl-diplomat__heading-label { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.13em; margin-bottom: 4px; }
+.tpl-diplomat__heading-rule { height: 1px; opacity: 0.2; }
+.tpl-diplomat__section { margin-bottom: 16px; }
+.tpl-diplomat__exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2px; }
+.tpl-diplomat__exp-role { font-size: 11px; font-weight: 700; color: #111; }
+.tpl-diplomat__exp-company { font-size: 10px; color: #555; margin-top: 1px; }
+.tpl-diplomat__exp-date { font-size: 9px; font-weight: 600; white-space: nowrap; margin-left: 8px; flex-shrink: 0; text-align: right; }
+.tpl-diplomat__bullet-line { display: flex; gap: 7px; margin-bottom: 3px; }
+/* Sidebar */
+.tpl-diplomat__sidebar { flex: 0 0 40%; }
+.tpl-diplomat__sb-contact-block { padding-bottom: 14px; margin-bottom: 16px; }
+.tpl-diplomat__sb-heading { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 7px; }
+.tpl-diplomat__sb-contact-item { font-size: 9.5px; color: #444; margin-bottom: 4px; word-break: break-word; }
+.tpl-diplomat__sb-section { margin-bottom: 16px; }
+.tpl-diplomat__sb-skill-cat { margin-bottom: 8px; }
+.tpl-diplomat__sb-skill-cat-name { font-size: 9px; font-weight: 700; color: #555; margin-bottom: 3px; }
+.tpl-diplomat__sb-pill { font-size: 8.5px; padding: 2px 7px; border-radius: 99px; font-weight: 500; }
+.tpl-diplomat__sb-pills { display: flex; flex-wrap: wrap; gap: 3px 4px; }
+.tpl-diplomat__sb-lang-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+.tpl-diplomat__sb-lang-name { font-size: 10px; font-weight: 600; }
+.tpl-diplomat__sb-lang-badge { font-size: 9px; color: #777; padding: 1px 6px; border-radius: 99px; }
+.tpl-diplomat__sb-cert { margin-bottom: 7px; }
+.tpl-diplomat__sb-cert-name { font-size: 9.5px; font-weight: 600; color: #222; }
+.tpl-diplomat__sb-cert-sub { font-size: 8.5px; color: #666; }

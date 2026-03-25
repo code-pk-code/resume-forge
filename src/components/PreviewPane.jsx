@@ -1,5 +1,6 @@
 // src/components/PreviewPane.jsx
 import { useState, useRef } from 'react';
+import ATSScore from './ATSScore.jsx';
 
 const COLOR_PRESETS = [
   { hex: '#2D6BE4', label: 'Blue'    },
@@ -38,6 +39,8 @@ export default function PreviewPane({
   onMobileClose,
   children,
   colorPresets = COLOR_PRESETS,
+  resumeData = {},
+  enabledSections = new Set(),
 }) {
   const [zoom, setZoom] = useState(75);
   const [activeTab, setActiveTab] = useState('preview');
@@ -47,6 +50,8 @@ export default function PreviewPane({
   const changeZoom = (delta) => {
     setZoom(z => Math.max(40, Math.min(150, z + delta)));
   };
+
+  const resetZoom = () => setZoom(75);
 
   const pageWarning  = pageCount > maxPages;
   const pageExact    = pageCount === maxPages;
@@ -120,7 +125,13 @@ export default function PreviewPane({
           {/* Zoom */}
           <div className="zoom-controls no-print" aria-label="Zoom controls">
             <button className="zoom-btn" onClick={() => changeZoom(-10)} aria-label="Zoom out">−</button>
-            <span className="zoom-val" aria-live="polite">{zoom}%</span>
+            <span
+              className="zoom-val"
+              title="Double-click to reset"
+              onDoubleClick={resetZoom}
+              style={{ cursor: 'pointer' }}
+              aria-live="polite"
+            >{zoom}%</span>
             <button className="zoom-btn" onClick={() => changeZoom(10)} aria-label="Zoom in">+</button>
           </div>
         </div>
@@ -133,14 +144,16 @@ export default function PreviewPane({
             style={{
               transform: `scale(${zoom / 100})`,
               transformOrigin: 'top center',
-              transition: 'transform 0.15s',
+              transition: 'transform 0.15s ease',
+              // Reserve space so scroll area doesn't collapse when scaled down
+              marginBottom: `${(zoom / 100 - 1) * -100}%`,
             }}
             className="resume-a4-wrapper"
           >
             {children}
           </div>
         ) : (
-          <ATSPanel />
+          <ATSScore data={resumeData} sections={enabledSections} />
         )}
       </div>
 
@@ -158,42 +171,3 @@ export default function PreviewPane({
 }
 
 /* ── ATS placeholder panel ─────────────────────────────────── */
-function ATSPanel() {
-  const checks = [
-    { label: 'Contact info present',   pass: true  },
-    { label: 'No tables or columns',   pass: true  },
-    { label: 'Standard section headings', pass: true },
-    { label: 'No images or graphics',  pass: true  },
-    { label: 'Job title included',     pass: true  },
-    { label: 'Date format consistent', pass: true  },
-    { label: 'Skills section present', pass: true  },
-    { label: 'File will be text-based (PDF)', pass: true },
-  ];
-  return (
-    <div style={{ padding: '20px 16px', maxWidth: 380, width: '100%' }}>
-      <div style={{ fontWeight: 600, fontSize: 13, color: 'var(--tx-primary)', marginBottom: 12 }}>
-        ATS compatibility
-      </div>
-      <div style={{
-        background: 'var(--green-bg)', border: '1px solid rgba(22,163,74,0.2)',
-        borderRadius: 'var(--r-md)', padding: '10px 12px', marginBottom: 14,
-        fontSize: 12, color: 'var(--green-tx)', fontWeight: 500,
-      }}>
-        ✓ All checks passed — resume is ATS-friendly
-      </div>
-      {checks.map((c, i) => (
-        <div key={i} style={{
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: '7px 0',
-          borderBottom: i < checks.length - 1 ? '1px solid var(--bd-faint)' : 'none',
-          fontSize: 12,
-        }}>
-          <span style={{ color: 'var(--tx-secondary)' }}>{c.label}</span>
-          <span style={{ color: c.pass ? 'var(--green)' : 'var(--red)', fontWeight: 600, fontSize: 11 }}>
-            {c.pass ? '✓ Pass' : '✗ Fail'}
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-}

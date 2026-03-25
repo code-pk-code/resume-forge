@@ -1,0 +1,219 @@
+/* TplNova.css ─────────────────────────────────────────────────
+   Nova — full-bleed colored header + single-column body.
+   Scope: all rules are prefixed .tpl-nova so they never leak.
+──────────────────────────────────────────────────────────────── */
+
+.tpl-nova {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header band ── */
+.tpl-nova__header {
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.tpl-nova__name-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.tpl-nova__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.tpl-nova__name {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.15;
+}
+
+.tpl-nova__title {
+  font-size: 11px;
+  opacity: 0.82;
+  margin-top: 3px;
+  font-weight: 500;
+}
+
+.tpl-nova__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+}
+
+.tpl-nova__contact-item {
+  font-size: 9px;
+  opacity: 0.85;
+}
+
+/* ── Body ── */
+.tpl-nova__body {
+  flex: 1;
+}
+
+/* ── Section heading ── */
+.tpl-nova__section-label {
+  font-size: 8.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  margin-bottom: 3px;
+}
+
+.tpl-nova__section-rule {
+  height: 1px;
+  opacity: 0.22;
+  margin-bottom: 7px;
+}
+
+.tpl-nova__section {
+  margin-bottom: 14px;
+}
+
+/* ── Experience entry ── */
+.tpl-nova__exp-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1px;
+}
+
+.tpl-nova__exp-role {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tpl-nova__exp-company {
+  font-size: 10px;
+  color: #555;
+  margin-left: 6px;
+}
+
+.tpl-nova__exp-date {
+  font-size: 9px;
+  color: #777;
+  white-space: nowrap;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+/* ── Education entry ── */
+.tpl-nova__edu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.tpl-nova__edu-degree {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tpl-nova__edu-school {
+  font-size: 9px;
+  color: #666;
+}
+
+/* ── Skill pill ── */
+.tpl-nova__skill-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.tpl-nova__skill-cat {
+  font-size: 9px;
+  font-weight: 700;
+  color: #555;
+  min-width: 58px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.tpl-nova__skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 4px;
+}
+
+.tpl-nova__skill-pill {
+  font-size: 8.5px;
+  padding: 1px 7px;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+/* ── Project entry ── */
+.tpl-nova__proj-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1px;
+}
+
+.tpl-nova__proj-name {
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.tpl-nova__proj-tech {
+  font-size: 8.5px;
+  color: #777;
+  margin-left: 5px;
+}
+
+.tpl-nova__proj-url {
+  font-size: 8.5px;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.tpl-nova__proj-desc {
+  font-size: 9.5px;
+  color: #555;
+  margin-top: 2px;
+  line-height: 1.45;
+}
+
+/* ── Cert / lang / misc ── */
+.tpl-nova__two-col-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.tpl-nova__lang-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 16px;
+}
+
+.tpl-nova__plain-text {
+  font-size: 10px;
+  color: #555;
+  line-height: 1.55;
+}
+
+.tpl-nova__bullet-line {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 2px;
+  align-items: flex-start;
+}

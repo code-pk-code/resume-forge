@@ -1,0 +1,169 @@
+/* ATSScore.css ────────────────────────────────────────────────
+   Styles for the ATS score panel shown in the preview pane.
+──────────────────────────────────────────────────────────────── */
+
+.ats-panel {
+  padding: 20px 16px 28px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.ats-panel__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--tx-primary);
+  margin-bottom: 14px;
+  letter-spacing: -0.1px;
+}
+
+/* Score ring row */
+.ats-panel__score-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: var(--r-lg, 10px);
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+.ats-panel__ring-wrap {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+}
+
+.ats-panel__ring-svg {
+  width: 52px;
+  height: 52px;
+}
+
+.ats-panel__ring-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.ats-panel__ring-num {
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ats-panel__ring-pct {
+  font-size: 8px;
+  font-weight: 700;
+  opacity: 0.75;
+  margin-top: 3px;
+}
+
+.ats-panel__score-meta {
+  flex: 1;
+}
+
+.ats-panel__score-label {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ats-panel__score-sub {
+  font-size: 11px;
+  color: var(--tx-secondary);
+  margin-top: 2px;
+}
+
+.ats-panel__score-hint {
+  font-size: 10px;
+  color: var(--tx-muted);
+  margin-top: 3px;
+}
+
+/* Check groups */
+.ats-panel__group {
+  margin-bottom: 14px;
+}
+
+.ats-panel__group-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--bd-faint);
+}
+
+.ats-panel__group-label--fail {
+  color: var(--red, #dc2626);
+}
+
+.ats-panel__group-label--pass {
+  color: var(--green, #16a34a);
+}
+
+/* Individual check row */
+.ats-check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--bd-faint);
+}
+
+.ats-check-row:last-child {
+  border-bottom: none;
+}
+
+.ats-check-row__icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.ats-check-row__icon--pass {
+  background: var(--green-bg, #dcfce7);
+  color: var(--green, #16a34a);
+}
+
+.ats-check-row__icon--fail {
+  background: #fee2e2;
+  color: var(--red, #dc2626);
+}
+
+.ats-check-row__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.ats-check-row__label {
+  font-size: 11.5px;
+  color: var(--tx-secondary);
+  line-height: 1.3;
+}
+
+.ats-check-row__detail {
+  font-size: 10px;
+  color: var(--tx-muted);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+.ats-check-row__weight {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--tx-muted);
+  flex-shrink: 0;
+  opacity: 0.5;
+  margin-top: 1px;
+}
